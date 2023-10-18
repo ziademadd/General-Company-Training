@@ -1,0 +1,76 @@
+1 -
+
+const userInput = prompt('Enter any Number : ');
+
+if (userInput === null || isNaN(userInput)) {
+  alert('Number is valid .');
+} else {
+
+  const reversedUserInput = reverse(parseInt(userInput, 10));
+  alert(' Revers Number = ' + reversedUserInput);
+}
+
+function reverse(number) {
+  const numberString = number.toString();
+  const reversedString = numberString.split('').reverse().join('');
+  const reversedNumber = parseInt(reversedString, 10);
+  return reversedNumber;
+}
+
+
+
+2 - 
+
+const inputString = prompt('Enter any text :');
+
+if (inputString !== null && inputString.trim() !== '') {
+  const n = inputString.length;
+  const characters = inputString.split('');
+
+  for (let i = 0; i < n - 1; i++) {
+    for (let j = 0; j < n - i - 1; j++) {
+      if (characters[j] > characters[j + 1]) {
+     
+        const temp = characters[j];
+        characters[j] = characters[j + 1];
+        characters[j + 1] = temp;
+      }
+    }
+  }
+
+  
+  console.log('Your text in sorted : ' + characters.join(''));
+} else {
+  console.log('Text invalid ');
+}
+
+
+3- 
+function checktext(inputString) {
+
+  inputString = inputString.toLowerCase();
+
+  let vowelCount = 0;
+
+  for (let i = 0; i < inputString.length; i++) {
+    const currentChar = inputString.charAt(i);
+
+    if (currentChar === 'a' || currentChar === 'e' || currentChar === 'i' || currentChar === 'o' || currentChar === 'u') {
+      vowelCount++;
+    }
+  }
+
+const inputString = prompt('Enter any text Exception (Y)  :');
+
+if (inputString !== null && inputString.trim() !== '') {
+  
+  const checktext= checktext(inputString);
+  console.log('Number of vowels : ' + checktext );
+} else {
+  console.log('Text invaled . ');
+}
+
+  return vowelCount;
+}
+
+
