@@ -71,6 +71,98 @@ if (inputString !== null && inputString.trim() !== '') {
 }
 
   return vowelCount;
+
+
+
+
 }
 
 
+
+
+
+4-
+function capitalizeWords(inputString) {
+
+  var words = inputString.split(' ');
+
+
+  for (var i = 0; i < words.length; i++) {
+    words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+  }
+
+  
+  var outputString = words.join(' ');
+
+  return outputString;
+}
+
+5- 
+function findLargestNumber(arr) {
+  if (arr.length === 0) {
+    return undefined;
+  }
+
+  var largest = arr[0];
+
+  for (var i = 1; i < arr.length; i++) {
+    if (arr[i] > largest) {
+      largest = arr[i];
+    }
+  }
+
+  return largest;
+}
+
+var numbers = [-5, -2, -6, 0, -1];
+var largestNumber = findLargestNumber(numbers);
+console.log("The largest number is: " + largestNumber);
+
+6-
+
+function bubbleSort(arr) {
+  var len = arr.length;
+  var swapped;
+  
+  do {
+    swapped = false;
+    for (var i = 0; i < len - 1; i++) {
+      if (arr[i] > arr[i + 1]) {
+        var temp = arr[i];
+        arr[i] = arr[i + 1];
+        arr[i + 1] = temp;
+        swapped = true;
+      }
+    }
+  } while (swapped);
+}
+
+var unsortedArray = [5, 2, 9, 3, 6];
+bubbleSort(unsortedArray);
+console.log(unsortedArray);
+
+7- 
+function isPalindrome(word) {
+  word = word.toLowerCase();
+  var left = 0;
+  var right = word.length - 1;
+
+  while (left < right) {
+    if (word[left] !== word[right]) {
+      return false;
+    }
+    left++;
+    right--;
+  }
+
+  return true;
+}
+
+
+
+8- function calculateFactorial(n) {
+  if (n === 0 || n === 1) return 1;
+  return n * calculateFactorial(n - 1);
+}
+
+console.log(calculateFactorial(4)); // Output: 24
